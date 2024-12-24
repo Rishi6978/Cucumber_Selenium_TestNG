@@ -24,7 +24,7 @@ public class LoginPageDefinitions {
 
 
     @Before
-    public void setUp() {
+    public  void setUp() {
 
         login  lg= new login();
        lg.lanchbrowser();
@@ -42,14 +42,15 @@ public class LoginPageDefinitions {
     public void goToHomePage(String userName, String passWord) {
 
       login  lg= new login();
-      lg.logintoapp("admib", "password");
+      lg.logintoapp(userName, passWord);
 
         // go the next page
     }
 
     @Then("User should be able to login successfully and new page open")
-    public void verifyLogin() {
+    public void verifyLogin() throws InterruptedException {
 
+        Thread.sleep(10000);
         String homePageHeading = driver.findElement(By.xpath("//*[@class='oxd-topbar-header-breadcrumb']/h6")).getText();
 
         //Verify new page - HomePage
