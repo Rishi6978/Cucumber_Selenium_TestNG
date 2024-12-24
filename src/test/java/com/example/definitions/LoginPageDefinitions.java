@@ -42,7 +42,7 @@ public class LoginPageDefinitions {
     public void goToHomePage(String userName, String passWord) {
 
       login  lg= new login();
-      lg.logintoapp("admib", "password");
+      lg.logintoapp("Admin", "admin123");
 
         // go the next page
     }
