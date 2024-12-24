@@ -92,5 +92,13 @@ public class LoginPageDefinitions {
     }
 
 
+    @Then("user verify My Action")
+    public void userVerifyMyAction() {
+        homepage homepg = new homepage();
+        login  lg= new login();
+        homepg.myActions();
+lg.forgotpwd();
 
+
+    }
 }
