@@ -12,7 +12,7 @@ public class base {
 
 
     public static WebDriver driver;
-    public final static int TIMEOUT = 5;
+    public final static int TIMEOUT = 30;
 
 @Before
     public WebDriver setUp() {

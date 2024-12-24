@@ -1,5 +1,6 @@
 package com.example.definitions;
 
+import com.example.pom.homepage;
 import com.example.pom.login;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -68,11 +69,28 @@ public class LoginPageDefinitions {
 
     }
 
+    @Then("user navigates to myinfo page")
+    public void usernavigateMYinfo() {
+
+        homepage homepg = new homepage();
+       homepg.navigatetosidemenu();
+
+    }
+
+    @Then("user navigates to {string}")
+    public void userNavigatesTo(String menu) {
+        homepage homepg = new homepage();
+        homepg.navigatetosidemenu(menu);
+    }
+
+
+
     @After
     public void teardown() {
 
         driver.quit();
     }
+
 
 
 }
