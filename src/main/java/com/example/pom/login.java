@@ -49,8 +49,7 @@ public  void username(String UN)
 
     } catch (Exception e) {
         throw new RuntimeException(e);
-        //Assert.fail();
-       // SS();
+
     }
 }
 
@@ -65,9 +64,7 @@ public  void username(String UN)
 
     public void logintoapp(String userName, String passWord) {
 
-       // login lg = new login();
 
-        // login to application
 
         link_forgotpassword.isDisplayed();
 
@@ -76,7 +73,7 @@ public  void username(String UN)
         driver.findElement(By.name("password")).sendKeys(passWord);
         btn_Login.click();
 
-        // go the next page
+  
     }
 
 
