@@ -26,6 +26,22 @@ public class login extends base {
 
     @FindBy(css="a[href=\"/web/index.php/pim/viewMyDetails\"]")
     private  WebElement MyInfoLink;
+
+    @FindBy(xpath = "//div[@class='orangehrm-action-header']//button[contains(@class, 'oxd-button--text')]")
+    private WebElement AddButton;
+
+    @FindBy(xpath = "(//div[@class=\"oxd-form-row\"]//input[@class=\"oxd-input oxd-input--active\"])[1]")
+    private WebElement Name;
+
+    @FindBy(xpath = "(//div[@class=\"oxd-form-row\"]//input[@class=\"oxd-input oxd-input--active\"])[2]")
+    private WebElement Relation;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement saveBTN;
+
+    @FindBy(css="div[class=\"oxd-layout-context\"]")
+    private By layOut;
+
 public login(){
     PageFactory.initElements(driver,this);
 }
@@ -45,13 +61,26 @@ public void lanchbrowser(){
         btn_Login.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(Dashboard_heading));
-        MyInfoLink.click();
+        pageName("PIM");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(layOut));
+        tabList("Emergency Contacts");
+        AddButton.click();
+        Name.sendKeys("KArthik");
+        Relation.sendKeys("friend");
+        saveBTN.click();
+
 
 
         // go the next page
     }
 
 
-
-
+public void pageName(String Page){
+    WebElement pageBTN= driver.findElement(By.xpath("//span[text()='"+Page+"']"));
+    pageBTN.click();
+}
+public void tabList(String tabName){
+    WebElement pageList = driver.findElement(By.xpath("//a[text()="+tabName+"]"));
+    pageList.click();
+}
 }
