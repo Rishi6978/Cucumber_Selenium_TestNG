@@ -1,5 +1,6 @@
 package com.example.definitions;
 
+import com.example.pom.emergencyContact;
 import com.example.pom.homepage;
 import com.example.pom.login;
 import io.cucumber.java.After;
@@ -22,14 +23,11 @@ public class LoginPageDefinitions {
   //  private static WebDriver driver;
  //   public final static int TIMEOUT = 5;
 
-
-
     @Before
     public  void setUp() {
 
         login  lg= new login();
-       lg.lanchbrowser();
-
+        lg.lanchbrowser();
     }
 
     @Given("User is on HRMLogin page {string}")
@@ -97,8 +95,27 @@ public class LoginPageDefinitions {
         homepage homepg = new homepage();
         login  lg= new login();
         homepg.myActions();
-lg.forgotpwd();
+//lg.forgotpwd();
 
 
+    }
+
+    @Then("user navigates to emergencycontacts page")
+    public void userNavigatesToEmergencycontactsPage() {
+        homepage homepg = new homepage();
+        homepg.navigatetosidemenu("Emergency Contacts");
+    }
+
+
+    @Then("user adds {int} contacts and edits the {int} contact for new contact name as {string}")
+    public void userAddsContactCountContactsAndEditsTheRecordNumberContactForNewContactNameAs(int contactCount, int recordNumber, String newContactName) throws InterruptedException {
+        emergencyContact ec = new emergencyContact();
+
+        for (int i = 1; i <= contactCount; i++) {
+            ec.addContact("Contact" + i, "contact" + i + "@mail.com",  "123");
+        }
+
+        ec.updateContactName(recordNumber,newContactName);
+        ec.getContactNameFromList(newContactName);
     }
 }
