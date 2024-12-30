@@ -39,7 +39,7 @@ public void navigatetosidemenu(){
     System.out.println(driver.getCurrentUrl());
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='PIM']")));
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='My Info']")));
 
 
 }
@@ -61,7 +61,7 @@ public void navigatetosidemenu(){
 
    public void myActions(){
 
-myActions.get(1).click();
+//myActions.get(1).click();
 
     }
 
