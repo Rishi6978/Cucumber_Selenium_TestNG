@@ -49,7 +49,7 @@ public void navigatetosidemenu(){
 
     public void navigatetosidemenu(String menu){
 
-       // myInfo.click();
+      
 
         WebElement sidemenu = driver.findElement(By.xpath("//*[text()='" + menu + "']"));
         sidemenu.click();
