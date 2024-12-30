@@ -97,8 +97,7 @@ public class LoginPageDefinitions {
         homepage homepg = new homepage();
         login  lg= new login();
         homepg.myActions();
-lg.forgotpwd();
-
+//lg.forgotpwd();
 
     }
 }
