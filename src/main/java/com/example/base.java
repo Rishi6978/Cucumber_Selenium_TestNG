@@ -27,9 +27,9 @@ return driver;
     }
 
 
-    @AfterAll
+   /* @AfterAll
     public void closeAll()
     {
 driver.quit();
-    }
+    }*/
 }
