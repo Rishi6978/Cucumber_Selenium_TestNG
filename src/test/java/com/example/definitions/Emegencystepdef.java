@@ -26,7 +26,6 @@ public class Emegencystepdef {
         }
         @Then("emergency contact should be added successfully")
         public void emergencyContactShouldBeAddedSuccessfully() {
-            // You can add assertions here to verify the contact was added successfully.
             System.out.println("Emergency contact added successfully!");
         }
 

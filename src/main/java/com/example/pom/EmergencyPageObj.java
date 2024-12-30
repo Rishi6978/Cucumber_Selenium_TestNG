@@ -17,7 +17,7 @@ import static com.example.base.driver;
 
 public class EmergencyPageObj {
 
-    //   private WebDriver driver;
+
     private WebDriverWait wait;
 
     @FindBy(xpath = "//*[text()='Emergency Contacts']")
@@ -91,7 +91,6 @@ public class EmergencyPageObj {
             emergenyname.sendKeys(newName);
             save.click();
         } else {
-            // Handle the case where the index is invalid (no contacts found or index out of bounds)
             System.out.println("Error: No contacts found or index out of bounds");
         }
     }}

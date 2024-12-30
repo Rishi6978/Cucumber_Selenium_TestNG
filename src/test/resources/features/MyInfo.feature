@@ -12,9 +12,9 @@ Feature: Update Employee Personal Details in OrangeHRM
       | EmployeeId          | muser0087        |
       | OtherId             | 4957589          |
       | Driver'sLicenseNumber | 56788          |
-      | LicenseExpiryDate     | 13-02-2024     |
+      | LicenseExpiryDate     | 2024-02-02    |
       | Nationality           | Austrian       |
       | MaritalStatus         | Single          |
-      | DateofBirth           | 24-01-2024      |
+      | DateofBirth           | 2024-01-01      |
       | Gender                | Male            |
     And User save the record

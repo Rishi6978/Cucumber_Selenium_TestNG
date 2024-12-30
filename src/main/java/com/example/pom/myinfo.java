@@ -59,6 +59,12 @@ public class myinfo {
     public void selectNationality(String nationality) throws InterruptedException {
         Thread.sleep(5000);
         WebElement dropdown = driver.findElement(By.xpath("(//div[contains(@class, 'oxd-select-text') and contains(@class, 'oxd-select-text--active')])[1]"));
+        String currentStatus = dropdown.getText().trim();
+
+        if (currentStatus.equalsIgnoreCase(nationality)) {
+            System.out.println("Marital status is already set to: " + nationality);
+            return;
+        }
         dropdown.click();
 
         List<WebElement> options = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
@@ -80,11 +86,17 @@ public class myinfo {
     public void selectMaritalStatus(String maritalStatus) throws InterruptedException {
         Thread.sleep(5000);
         WebElement dropdown1 = driver.findElement(By.xpath("(//div[@class='oxd-select-text oxd-select-text--active']//div[contains(@class, 'oxd-select-text')])[3]"));
+        String currentStatus = dropdown1.getText().trim();
+
+        if (currentStatus.equalsIgnoreCase(maritalStatus)) {
+            System.out.println("Marital status is already set to: " + maritalStatus);
+            return;
+        }
         dropdown1.click();
-        String option="Other";
+
         List<WebElement> Maritaloptions = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
                 By.xpath("//div[@class='oxd-select-option']")));
-        // Loop through the options and select the matching nationality
+
         boolean isSelected = false;
         for (WebElement Moption : Maritaloptions) {
             String optionText = Moption.getText();
@@ -95,7 +107,7 @@ public class myinfo {
             }
         }
         if (!isSelected) {
-            throw new NoSuchElementException("Maritalstatus not found: " + option);
+            throw new NoSuchElementException("Maritalstatus not found: " + maritalStatus);
         }
 
     }
