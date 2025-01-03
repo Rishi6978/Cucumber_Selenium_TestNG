@@ -2,25 +2,40 @@ package com.example.pom;
 
 import com.example.base;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import java.security.PrivateKey;
-import java.time.Duration;
 
 //import static com.example.base.driver;
 
 public class login extends base {
+ //  public login loginpg;
 
+    @FindBy(xpath = "//*[@class='oxd-form']/div[3]/button")
 
     @FindBy(xpath = "//*[@class='oxd-form']/div[3]/button")
     private WebElement btn_Login;
 
+    @FindBy(name = "username")
+    private WebElement txt_username;
+
+
+
+    @FindBy(xpath = "//div[@class='orangehrm-login-forgot']")
+    private WebElement link_forgotpassword;
+
+
+    public login() {
+        PageFactory.initElements(driver, this);
+    }
     @FindBy(css="h6.oxd-text")
     private WebElement Dashboard_heading;
 
@@ -42,15 +57,37 @@ public class login extends base {
     @FindBy(css="div[class=\"oxd-layout-context\"]")
     private By layOut;
 
-public login(){
-    PageFactory.initElements(driver,this);
-}
+
 
 
 public void lanchbrowser(){
     setUp();
 
 }
+
+
+
+
+
+public  void username(String UN)
+{
+    try {
+        txt_username.sendKeys(UN);
+
+
+    } catch (Exception e) {
+        throw new RuntimeException(e);
+
+    }
+}
+
+
+    public  void forgotpwd()
+    {
+        link_forgotpassword.click();
+    }
+
+
 
 
     public void logintoapp(String userName, String passWord) {
@@ -75,12 +112,6 @@ public void lanchbrowser(){
     }
 
 
-public void pageName(String Page){
-    WebElement pageBTN= driver.findElement(By.xpath("//span[text()='"+Page+"']"));
-    pageBTN.click();
-}
-public void tabList(String tabName){
-    WebElement pageList = driver.findElement(By.xpath("//a[text()="+tabName+"]"));
-    pageList.click();
-}
+
+
 }

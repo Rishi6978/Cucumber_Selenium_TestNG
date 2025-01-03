@@ -1,5 +1,6 @@
 package com.example.definitions;
 
+import com.example.pom.homepage;
 import com.example.pom.login;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -24,7 +25,7 @@ public class LoginPageDefinitions {
 
 
     @Before
-    public void setUp() {
+    public  void setUp() {
 
         login  lg= new login();
        lg.lanchbrowser();
@@ -42,14 +43,16 @@ public class LoginPageDefinitions {
     public void goToHomePage(String userName, String passWord) {
 
       login  lg= new login();
+      lg.logintoapp(userName, passWord);
       lg.logintoapp("Admin", "admin123");
 
         // go the next page
     }
 
     @Then("User should be able to login successfully and new page open")
-    public void verifyLogin() {
+    public void verifyLogin() throws InterruptedException {
 
+        Thread.sleep(10000);
         String homePageHeading = driver.findElement(By.xpath("//*[@class='oxd-topbar-header-breadcrumb']/h6")).getText();
 
         //Verify new page - HomePage
@@ -67,6 +70,22 @@ public class LoginPageDefinitions {
 
     }
 
+    @Then("user navigates to myinfo page")
+    public void usernavigateMYinfo() {
+
+        homepage homepg = new homepage();
+       homepg.navigatetosidemenu();
+
+    }
+
+    @Then("user navigates to {string}")
+    public void userNavigatesTo(String menu) {
+        homepage homepg = new homepage();
+        homepg.navigatetosidemenu(menu);
+    }
+
+
+
     @After
     public void teardown() {
 
@@ -74,4 +93,13 @@ public class LoginPageDefinitions {
     }
 
 
+    @Then("user verify My Action")
+    public void userVerifyMyAction() {
+        homepage homepg = new homepage();
+        login  lg= new login();
+        homepg.myActions();
+lg.forgotpwd();
+
+
+    }
 }
