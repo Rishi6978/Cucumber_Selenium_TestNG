@@ -26,9 +26,14 @@ Feature: Login to HRM Application
     Then user navigates to "Dashboard"
   Then user verify My Action
 
+@ValidCredentials @smoke
+  Scenario: Login with valid credentials  and click on help icon and returns to dashboard page
 
-
-
+  Given  User enters username as "Admin" and password as "admin123"
+  When User should be able to login successfully and new page open
+  And user clicks on help icon
+  Then new page opens and close it
+  And return to Dashboard page
 #  @InvalidCredentials
 #  Scenario Outline: Login with invalid credentials
 #

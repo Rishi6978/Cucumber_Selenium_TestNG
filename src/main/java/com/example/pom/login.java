@@ -1,6 +1,9 @@
 package com.example.pom;
 
 import com.example.base;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,16 +16,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.security.PrivateKey;
+import java.time.Duration;
+import java.util.ArrayList;
 
 //import static com.example.base.driver;
 
 public class login extends base {
  //  public login loginpg;
 
-    @FindBy(xpath = "//*[@class='oxd-form']/div[3]/button")
-
-    @FindBy(xpath = "//*[@class='oxd-form']/div[3]/button")
-    private WebElement btn_Login;
 
     @FindBy(name = "username")
     private WebElement txt_username;
@@ -57,16 +58,19 @@ public class login extends base {
     @FindBy(css="div[class=\"oxd-layout-context\"]")
     private By layOut;
 
+    @FindBy(css="[type=\"submit\"]")
+    private WebElement btnLogin;
 
+    @FindBy(css="button[title=\"Help\"]")
+    private WebElement helpIcon;
 
+    @FindBy(css="span[class=\"oxd-topbar-header-breadcrumb\"]")
+    private WebElement DashboardHeading;
 
 public void lanchbrowser(){
     setUp();
 
 }
-
-
-
 
 
 public  void username(String UN)
@@ -98,9 +102,7 @@ public  void username(String UN)
         btn_Login.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(Dashboard_heading));
-        pageName("PIM");
         wait.until(ExpectedConditions.visibilityOfElementLocated(layOut));
-        tabList("Emergency Contacts");
         AddButton.click();
         Name.sendKeys("KArthik");
         Relation.sendKeys("friend");
@@ -110,6 +112,37 @@ public  void username(String UN)
 
         // go the next page
     }
+
+    public class HelpIconSteps{
+
+@Given("the user is on dashboard page")
+    public void userisonDashboardPage(){
+    driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    driver.findElement(By.name("username")).sendKeys("Admin");
+    driver.findElement(By.name("password")).sendKeys("admin123");
+    btnLogin.click();
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    wait.until(ExpectedConditions.visibilityOf(Dashboard_heading));
+
+}
+@When("the user clicks on help icon")
+        public void userClicksDashboardPage(){
+    helpIcon.click();
+}
+
+@And("Help page opens in new tab")
+        public void useronHelpsPage(){
+    ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+    driver.switchTo().window(tabs.get(0));
+}
+
+@And("Dashboard heading is displayed")
+        public void useronDashboardPage(){
+    String headingName= DashboardHeading.getText();
+    headingName.equalsIgnoreCase("dashboard");
+}
+    }
+
 
 
 
