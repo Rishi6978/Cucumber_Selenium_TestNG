@@ -24,7 +24,15 @@ Feature: Login to HRM Application
     Then User should be able to login successfully and new page open
     Then user navigates to myinfo page
     Then user navigates to "Dashboard"
-  Then user verify My Action
+    Then user verify My Action
+
+
+# add data ia and edit toggle
+
+
+
+
+
 
 
 
