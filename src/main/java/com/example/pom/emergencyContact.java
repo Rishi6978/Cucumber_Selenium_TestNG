@@ -109,7 +109,7 @@ public class emergencyContact extends base {
 //        contactNameField.sendKeys(Keys.CONTROL + "a"); // Select all text (Windows/Linux)
 //        contactNameField.sendKeys(Keys.DELETE);       // Delete the selected text
 //        Thread.sleep(500);                            // Allow time for the UI to update
-//        contactNameField.sendKeys(newName);           // Enter the new name
+//        contactNameField.sendKeys(newName);           // Enter the newname
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("arguments[0].value='';", contactNameField); // Clear the field
 //        Thread.sleep(500); // Optional: Allow UI to reflect the changes

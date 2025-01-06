@@ -26,8 +26,8 @@ public class LoginPageDefinitions {
     @Before
     public  void setUp() {
 
-        login  lg= new login();
-        lg.lanchbrowser();
+//        login  lg= new login();
+//        lg.lanchbrowser();
     }
 
     @Given("User is on HRMLogin page {string}")
