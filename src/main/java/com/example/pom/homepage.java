@@ -36,6 +36,8 @@ public void navigatetosidemenu(){
 
         myInfo.click();
 
+
+
     System.out.println(driver.getCurrentUrl());
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
@@ -47,7 +49,7 @@ public void navigatetosidemenu(){
 
     public void navigatetosidemenu(String menu){
 
-       // myInfo.click();
+      
 
         WebElement sidemenu = driver.findElement(By.xpath("//*[text()='" + menu + "']"));
         sidemenu.click();
@@ -61,7 +63,15 @@ public void navigatetosidemenu(){
 
    public void myActions(){
 
-myActions.get(1).click();
+myActions.get(0).click();
+
+    }
+
+
+
+    public void verifyTostmsg(){
+
+        myActions.get(1).click();
 
     }
 
