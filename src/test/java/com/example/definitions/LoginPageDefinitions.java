@@ -2,6 +2,7 @@ package com.example.definitions;
 
 import com.example.pom.homepage;
 import com.example.pom.login;
+import com.example.utils;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -9,6 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
@@ -85,10 +87,20 @@ public class LoginPageDefinitions {
 
 
 
+
+    @Then("user navigates to help")
+    public void user_navugates_to_help(){
+        homepage homepg = new homepage();
+
+        homepg.helpicon();
+
+
+    }
+
     @After
     public void teardown() {
 
-        driver.quit();
+    //    driver.quit();
     }
 
 
@@ -97,8 +109,13 @@ public class LoginPageDefinitions {
         homepage homepg = new homepage();
         login  lg= new login();
         homepg.myActions();
-lg.forgotpwd();
 
+//homepg.verifyhelp();
+
+
+
+
+//lg.forgotpwd();
 
     }
 }
