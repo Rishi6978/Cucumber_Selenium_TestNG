@@ -3,7 +3,7 @@ Feature: Check and Print the claims in OrangeHRM
 
   Background:
     Given User is on HRMLogin page "https://opensource-demo.orangehrmlive.com/"
-
+#scecnrio outline need line 17
   Scenario: Fetch and Print claims successfully
     Given User enters username as "Admin" and password as "admin123"
     When User should be able to login successfully and new page open
