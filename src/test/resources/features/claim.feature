@@ -4,7 +4,7 @@ Feature: Check and Print the claims in OrangeHRM
   Background:
     Given User is on HRMLogin page "https://opensource-demo.orangehrmlive.com/"
 
-  Scenario Outline: Fetch and Print claims successfully
+  Scenario: Fetch and Print claims successfully
     Given User enters username as "Admin" and password as "admin123"
     When User should be able to login successfully and new page open
     Then user navigates to claims page
