@@ -18,3 +18,4 @@ Feature: Update Employee Personal Details in OrangeHRM
       | DateofBirth           | 2024-01-01      |
       | Gender                | Male            |
     And User save the record
+    Then User uploads a file

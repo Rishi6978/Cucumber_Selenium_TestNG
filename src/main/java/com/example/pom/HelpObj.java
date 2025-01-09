@@ -33,12 +33,14 @@ public class HelpObj {
     {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.elementToBeClickable(helpIcon)).click();
+
     }
     public void windlowHandles()
     {
         Set<String> allWindows = driver.getWindowHandles();
         for (String windowHandle : allWindows) {
             if (!windowHandle.equals(parentWindow)) {
+                System.out.println("Window Handle: " + windowHandle);
                 driver.switchTo().window(windowHandle);
                 break;
             }

@@ -9,4 +9,4 @@ Feature: Validate Help Feature in OrangeHRM
     And user clicks on the Help icon
     Then help page opens in a new tab displaying the relevant content
     And user verifies the content on the help page
-    When user closes the help page and switches back to the home tab
+    When user is successfully redirected to the home page

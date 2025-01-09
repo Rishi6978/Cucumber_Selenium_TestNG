@@ -1,5 +1,6 @@
 package com.example.pom;
 
+import io.cucumber.java.en.And;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 
@@ -35,6 +40,14 @@ public class myinfo {
     public WebElement MaritalStatusText;
     @FindBy(xpath = "//label[text()='Other Id']")
     public WebElement OtherIdText;
+    @FindBy(xpath = "//*[text()=' Add ']//following-sibling::i")
+    public WebElement AddAttachment;
+    @FindBy(xpath = "(//*[@type='submit'])[3]")
+    public WebElement saveAttachment;
+    @FindBy(xpath = "//*[text()='Browse']")
+    public WebElement Browse;
+    @FindBy(xpath = "//div[@class='oxd-table-card']")
+    public WebElement ListofAttchments;
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -83,6 +96,7 @@ public class myinfo {
             throw new NoSuchElementException("Nationality not found: " + nationality);
         }
     }
+
     public void selectMaritalStatus(String maritalStatus) throws InterruptedException {
         Thread.sleep(5000);
         WebElement dropdown1 = driver.findElement(By.xpath("(//div[@class='oxd-select-text oxd-select-text--active']//div[contains(@class, 'oxd-select-text')])[3]"));
@@ -118,6 +132,7 @@ public class myinfo {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", genderOption);
         wait.until(ExpectedConditions.elementToBeClickable(genderOption));
     }
+
     private void clearAndEnterText(WebElement element, String text) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         Actions actions = new Actions(driver);
@@ -129,10 +144,12 @@ public class myinfo {
                 .perform();
         element.sendKeys(text);
     }
+
     public void waitForElementToBeClickableAndClick(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
+
     // Method to enter the date of birth
     public void enterDateOfBirth(String dateOfBirth) {
         WebElement dateOfBirthField = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Date of Birth']//following::input[1]")));
@@ -141,17 +158,52 @@ public class myinfo {
         clearAndEnterText(dateOfBirthField, dateOfBirth);
         dateOfBirthField.sendKeys(Keys.TAB);
     }
+
     public void enterLicenseExpiry(String licenseExpiry) throws InterruptedException {
         WebElement licenseExpiryDateField = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='License Expiry Date']//following::input[1]")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", OtherIdText);
         Thread.sleep(5000);
         waitForElementToBeClickableAndClick(licenseExpiryDateField);
-        clearAndEnterText(licenseExpiryDateField,licenseExpiry);
+        clearAndEnterText(licenseExpiryDateField, licenseExpiry);
         licenseExpiryDateField.sendKeys(Keys.TAB);
     }
+
+    public void uploadFile() throws InterruptedException, AWTException {
+
+    //    AddAttachment.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",AddAttachment );
+        js.executeScript("arguments[0].click();", AddAttachment );
+        Thread.sleep(2000);
+        Browse.click();
+        StringSelection filePathSelection= new StringSelection("C:\\Users\\aakan\\Downloads\\test.png");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filePathSelection,null);
+        Thread.sleep(4000);
+
+        Robot rb=new Robot();
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        rb.keyPress(KeyEvent.VK_V);
+       //C:\Users\aakan\Downloads\test.png
+        rb.keyRelease(KeyEvent.VK_V);
+        rb.keyRelease(KeyEvent.VK_CONTROL);
+        Thread.sleep(3000);
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(5000);
+        saveAttachment.click();
+Thread.sleep(2000);
+        // js.executeScript("arguments[0].click();", Browse );
+        List<WebElement> elements = driver.findElements(By.xpath("//div[@class='oxd-table-card']"));
+        for (WebElement element : elements) {
+            System.out.println(element.getText());
+        }
+    }
+
     public void save() throws InterruptedException {
         Thread.sleep(5000);
         driver.findElement(By.xpath("(//button[@type='submit'])[1]")).click();
 
     }
+
+
 }
