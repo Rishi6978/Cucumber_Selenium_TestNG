@@ -5,6 +5,7 @@ import com.example.pom.myinfo;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 
+import java.awt.*;
 import java.util.Map;
 
 import static com.example.base.driver;
@@ -36,5 +37,12 @@ public class MyInfoPageDefinitions {
         myInfoPage.selectGender(gender);
         System.out.println("Updated Personal Details: " + details);
 
+    }
+    @And("the user adds an attachment by uploading the file {string}")
+    public void userAddsAttachment(String filePath) throws InterruptedException, AWTException {
+        myinfo myInfoPage = new myinfo(driver);
+        Thread.sleep(5000);
+        myInfoPage.uploadFile(filePath);
+        System.out.println("File uploaded successfully: " + filePath);
     }
 }

@@ -5,6 +5,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
 public class myinfo {
     @FindBy(xpath = "//input[@name='firstName']")
     private WebElement firstNameField;
@@ -20,6 +24,15 @@ public class myinfo {
 
     @FindBy(xpath =  "//label[text()='Other Id']//following::input[2]")
     private WebElement licenseNoField;
+
+    @FindBy(xpath = "//button[text()=' Add ']")
+    private WebElement addAttachmentButton;
+
+    @FindBy(xpath = "//div[text()='Browse']")
+    private WebElement browseFileField;
+
+    @FindBy(xpath = "(//*[@type='submit'])[3]")
+    private WebElement uploadButton;
 
 //    @FindBy(xpath = "(//input[@placeholder='yyyy-dd-mm'])[1]")
 //    private WebElement licenseExpiryDateField;
@@ -77,6 +90,37 @@ public class myinfo {
     public void selectGender(String gender) {
       driver.findElement(By.xpath("//div[@class='--gender-grouped-field']//label[text()='" + gender + "']")).click();
     }
+
+    public void uploadFileUsingRobot(String filePath) throws AWTException, InterruptedException {
+
+        StringSelection selection = new StringSelection(filePath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+
+        Robot robot = new Robot();
+        robot.delay(2000);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
+        Thread.sleep(2000);
+    }
+
+    public void clickAddAttachment() {
+        waitForElementToBeClickableAndClick(addAttachmentButton);
+    }
+
+    public void uploadFile(String filePath) throws AWTException, InterruptedException {
+        clickAddAttachment();
+        wait.until(ExpectedConditions.elementToBeClickable(browseFileField)).click();
+        uploadFileUsingRobot(filePath);
+        Thread.sleep(20000);
+        waitForElementToBeClickableAndClick(uploadButton);
+    }
+
 
     private void clearAndEnterText(WebElement element, String text) {
         wait.until(ExpectedConditions.elementToBeClickable(element));

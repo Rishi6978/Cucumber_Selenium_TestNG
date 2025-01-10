@@ -16,3 +16,4 @@ Feature: Update Employee Personal Details in OrangeHRM
       | Nationality            | Indian            |
       | MaritalStatus          | Married           |
       | Gender                 | Female            |
+    And the user adds an attachment by uploading the file "C:\Users\surya\Downloads\Rishi Class\SuryaUpload.jpeg"
