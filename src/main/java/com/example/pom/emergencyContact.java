@@ -89,7 +89,6 @@ public class emergencyContact extends base {
         saveContactButton.click();
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("oxd-form-loader")));
 
-        // Optionally, wait for the "Add" button to be clickable again for the next contact
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=' Add '][1]")));
     }
 
@@ -122,15 +121,13 @@ public class emergencyContact extends base {
 //
 
         Actions actions = new Actions(driver);
-        actions.click(contactNameField)  // Focus the field
-                .keyDown(Keys.CONTROL)    // Hold CTRL (use COMMAND on Mac)
-                .sendKeys("a")            // Select all text
-                .keyUp(Keys.CONTROL)      // Release CTRL
-                .sendKeys(Keys.BACK_SPACE) // Clear the selected text
-                .sendKeys(newName)         // Type the new value
+        actions.click(contactNameField)
+                .keyDown(Keys.CONTROL)
+                .sendKeys("a")
+                .keyUp(Keys.CONTROL)
+                .sendKeys(Keys.BACK_SPACE)
+                .sendKeys(newName)
                 .perform();
-
-
 
         //   WebElement element2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=' Save ']")));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("oxd-form-loader")));
@@ -138,7 +135,6 @@ public class emergencyContact extends base {
         saveContactButton.click();
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("oxd-form-loader")));
 
-        // Optionally, wait for the "Add" button to be clickable again for the next contact
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=' Add '][1]")));
 
         //   WebElement saveButton = driver.findElement(By.xpath("//button[text()=' Save ']"));

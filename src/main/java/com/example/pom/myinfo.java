@@ -50,39 +50,36 @@ public class myinfo {
     }
 
     public void updatePersonalDetails(String fullName, String middleName, String employeeId, String otherId, String licenseNumber, String licenseExpiryDate, String dateOfBirth) {
-        /*wait.until(ExpectedConditions.elementToBeClickable(firstNameField)).clear();
-        firstNameField.sendKeys(fullName);*/
+
         clearAndEnterText(firstNameField, fullName);
         clearAndEnterText(middleNameField, middleName);
         clearAndEnterText(employeeIdField, employeeId);
         clearAndEnterText(otherIdField, otherId);
         clearAndEnterText(licenseNoField, licenseNumber);
-        // clearAndEnterText(licenseExpiryDateField, licenseExpiryDate);
-        // clearAndEnterText(dateOfBirthField, dateOfBirth);
+
     }
 
     public void selectNationality(String nationality) {
 //        WebElement nationalityOption = wait.until(ExpectedConditions.elementToBeClickable(
-//                By.xpath("//div[text()='" + nationality + "']")));
+//        By.xpath("//div[text()='" + nationality + "']")));
 //        nationalityOption.click();
 
         WebElement dropdown = driver.findElement(By.xpath("//div[@class='oxd-select-text oxd-select-text--active'][1]")); // Replace with actual locator
         dropdown.click();
-        // Locate the desired option and click it
+
         WebElement option = driver.findElement(By.xpath("//span[text()='" + nationality + "']")); // Update XPath
         option.click();
     }
 
     public void selectMaritalStatus(String maritalStatus) throws InterruptedException {
 //        WebElement maritalStatusOption = wait.until(ExpectedConditions.elementToBeClickable(
-//                By.xpath("//div[text()='" + maritalStatus + "']")));
+//        By.xpath("//div[text()='" + maritalStatus + "']")));
 //        maritalStatusOption.click();
 
         Thread.sleep(5000);
 
         WebElement dropdown2 = driver.findElement(By.xpath("(//div[@class='oxd-select-text oxd-select-text--active']//div[contains(@class, 'oxd-select-text')])[3]")); // Replace with actual locator
         dropdown2.click();
-        // Locate the desired option and click it
         WebElement option2 = driver.findElement(By.xpath("//span[text()='" + maritalStatus + "']")); // Update XPath
         option2.click();
     }

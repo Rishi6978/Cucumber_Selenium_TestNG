@@ -42,8 +42,6 @@ public class LoginPageDefinitions {
 
       login  lg= new login();
       lg.logintoapp(userName, passWord);
-
-        // go the next page
     }
 
     @Then("User should be able to login successfully and new page open")
@@ -52,7 +50,6 @@ public class LoginPageDefinitions {
         Thread.sleep(10000);
         String homePageHeading = driver.findElement(By.xpath("//*[@class='oxd-topbar-header-breadcrumb']/h6")).getText();
 
-        //Verify new page - HomePage
         Assert.assertEquals(homePageHeading, "Dashboard");
 
     }
@@ -62,7 +59,6 @@ public class LoginPageDefinitions {
 
         String actualErrorMessage = driver.findElement(By.xpath("//*[@class='orangehrm-login-error']/div[1]/div[1]/p")).getText();
 
-        // Verify Error Message
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
 
     }
