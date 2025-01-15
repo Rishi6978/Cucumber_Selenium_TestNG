@@ -1,6 +1,5 @@
 package com.example.pom;
 
-import io.cucumber.java.en.And;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.io.File;
 import java.time.Duration;
 import java.util.List;
 
@@ -53,7 +51,7 @@ public class myinfo {
 
     public myinfo(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
 
@@ -133,7 +131,7 @@ public class myinfo {
         wait.until(ExpectedConditions.elementToBeClickable(genderOption));
     }
 
-    private void clearAndEnterText(WebElement element, String text) {
+    public void clearAndEnterText(WebElement element, String text) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         Actions actions = new Actions(driver);
         actions.click(element) // Focus on the element

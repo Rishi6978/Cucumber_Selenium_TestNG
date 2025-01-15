@@ -1,7 +1,7 @@
 Feature: Update Employee Personal Details in OrangeHRM
 
   Background:
-    Given User is on HRMLogin page "https://opensource-demo.orangehrmlive.com/"
+    Given User is on HRMLogin page "
 
   Scenario: Update employee personal information
     Given User enters username as "Admin" and password as "admin123"
