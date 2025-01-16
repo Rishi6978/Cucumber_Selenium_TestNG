@@ -1,5 +1,6 @@
 package com.example.pom;
 
+import com.example.utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,6 +24,12 @@ public class homepage {
     @FindBy(xpath = "//div[@class='orangehrm-todo-list']")
     private List<WebElement> myActions;
 
+    @FindBy(xpath = "//*[@class='oxd-icon-button']")
+    private WebElement help;
+
+    @FindBy(xpath = "//input[@type='search']")
+    private WebElement search_help;
+
 
 
 
@@ -41,7 +48,7 @@ public void navigatetosidemenu(){
     System.out.println(driver.getCurrentUrl());
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='PIM']")));
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='My Info']")));
 
 
 }
@@ -49,7 +56,7 @@ public void navigatetosidemenu(){
 
     public void navigatetosidemenu(String menu){
 
-      
+
 
         WebElement sidemenu = driver.findElement(By.xpath("//*[text()='" + menu + "']"));
         sidemenu.click();
@@ -75,6 +82,57 @@ myActions.get(0).click();
 
     }
 
+
+
+public void helpicon(){
+
+
+        utils.click(help,"help icon");
+
+
+             driver.getWindowHandles().forEach(tab-> driver.switchTo().window(tab));
+
+
+
+    search_help.sendKeys("testing");
+
+    driver.close();
+
+    driver.getWindowHandles().forEach(tab-> driver.switchTo().window(tab));
+
+    utils.click(help,"help icon");
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//    public  void verify(){
+//
+//        utils.click(help,"click on help text");
+//
+//
+//        driver.getWindowHandles().forEach(tab->driver.switchTo().window(tab));
+//        driver.findElement(By.xpath("//*[@type='search']")).sendKeys("test");
+//
+//        driver.close();
+//        driver.getWindowHandles().forEach(tab->driver.switchTo().window(tab));
+//
+//
+//    }
+//
 
 
 }
