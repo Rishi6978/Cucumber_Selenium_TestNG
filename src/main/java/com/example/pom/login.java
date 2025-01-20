@@ -102,7 +102,7 @@ public  void username(String UN)
         // login to application
         driver.findElement(By.name("username")).sendKeys(userName);
         driver.findElement(By.name("password")).sendKeys(passWord);
-        btn_Login.click();
+        btnLogin.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(Dashboard_heading));
         wait.until(ExpectedConditions.visibilityOfElementLocated(layOut));
