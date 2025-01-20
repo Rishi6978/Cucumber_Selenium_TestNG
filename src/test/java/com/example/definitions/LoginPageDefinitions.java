@@ -15,7 +15,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-import static com.example.base.driver;
+import static com.example.BasePage.driver;
 
 public class LoginPageDefinitions {
 

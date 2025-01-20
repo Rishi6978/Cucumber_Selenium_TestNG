@@ -2,19 +2,20 @@ package com.example;
 
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
-public class base {
+public class BasePage extends PageFunctions{
 
 
     public static WebDriver driver;
     public final static int TIMEOUT = 30;
 
-@Before
+@BeforeAll
     public WebDriver setUp() {
 
         ChromeOptions options = new ChromeOptions();

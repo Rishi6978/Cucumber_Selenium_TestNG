@@ -1,6 +1,6 @@
 package com.example.pom;
 
-import com.example.base;
+import com.example.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,7 @@ import java.security.PrivateKey;
 
 //import static com.example.base.driver;
 
-public class login extends base {
+public class login extends BasePage {
  //  public login loginpg;
 
     @FindBy(xpath = "//*[@class='oxd-form']/div[3]/button")

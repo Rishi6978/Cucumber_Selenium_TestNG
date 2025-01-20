@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static com.example.base.driver;
+import static com.example.BasePage.driver;
 
 public class homepage {
 
