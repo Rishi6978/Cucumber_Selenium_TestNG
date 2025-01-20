@@ -46,6 +46,7 @@ public class LoginPageDefinitions {
 
       login  lg= new login();
       lg.logintoapp(userName, passWord);
+      lg.logintoapp("Admin", "admin123");
 
         // go the next page
     }
