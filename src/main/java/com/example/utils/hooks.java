@@ -1,8 +1,7 @@
-package com.example;
+package com.example.utils;
 
 import com.example.pom.login;
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 
 import static com.example.base.driver;
 

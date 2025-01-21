@@ -1,10 +1,7 @@
-package com.example;
+package com.example.utils;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
-import static com.example.base.driver;
 
 public class utils {
 
@@ -30,5 +27,9 @@ public class utils {
 
         }
     }
+
+
+
+
 
 }
