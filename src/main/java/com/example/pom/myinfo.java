@@ -17,7 +17,7 @@ public class myinfo {
 
     @FindBy(xpath = "//input[@name='middleName']")
     public WebElement middleNameField;
-
+//
     @FindBy(xpath = "//label[text()='Employee Id']//following::input[1]")
     public WebElement employeeIdField;
 
@@ -118,7 +118,7 @@ public class myinfo {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", genderOption);
         wait.until(ExpectedConditions.elementToBeClickable(genderOption));
     }
-    private void clearAndEnterText(WebElement element, String text) {
+    void clearAndEnterText(WebElement element, String text) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         Actions actions = new Actions(driver);
         actions.click(element) // Focus on the element

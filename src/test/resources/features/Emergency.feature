@@ -16,9 +16,9 @@ Feature: Add Emergency Contact in OrangeHRM
 
     Examples:
       | name         | relationship | telephone |
-      | John Smith   | Brother      | 1234567890  |
-      | Aakanksha    | Sister       | 1234567891  |
-      | Smith        | Father       | 1234567894 |
+      | surya bhai    | Brother      | 1798940678  |
+      | pardha       | Brother       | 9490411189  |
+      | likitha        | Father       | 1523367894 |
 
 
   Scenario: User edits the second emergency contact name and validates the updated name
@@ -26,5 +26,5 @@ Feature: Add Emergency Contact in OrangeHRM
     When User should be able to login successfully and new page open
     Then user navigates to myinfo page
     Given user navigates to Emergency Contact Details
-    And user edits the second emergency contact name to "John Doe"
-    Then user should see the updated name as "John Doe"
+    And user edits the second emergency contact name to "pardhamodify"
+    Then user should see the updated name as "pardhamodify"
