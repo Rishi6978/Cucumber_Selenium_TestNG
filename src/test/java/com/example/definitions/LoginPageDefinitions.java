@@ -1,23 +1,21 @@
 package com.example.definitions;
 
+
+
 import com.example.pom.homepage;
 import com.example.pom.login;
-import com.example.utils;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WindowType;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
-import java.time.Duration;
+import java.io.FileNotFoundException;
 
 import static com.example.base.driver;
+
 
 public class LoginPageDefinitions {
 
@@ -35,17 +33,20 @@ public class LoginPageDefinitions {
     }
 
     @Given("User is on HRMLogin page {string}")
-    public void loginTest(String url) {
+    public void loginTest(String url) throws FileNotFoundException {
 
+
+
+       // System.out.println(properties.getProperty("url")+"urlfghj ");
         driver.get(url);
 
     }
 
-    @When("User enters username as {string} and password as {string}")
-    public void goToHomePage(String userName, String passWord) {
+    @When("User enters username as {string} from {string} in {string} with {string} and password as {string}")
+    public void goToHomePage(String FileName, String SheetName, String dataRowNum,String userName, String passWord) {
 
       login  lg= new login();
-      lg.logintoapp(userName, passWord);
+      lg.logintoapp(FileName, SheetName,dataRowNum,userName, passWord);
 
         // go the next page
     }
