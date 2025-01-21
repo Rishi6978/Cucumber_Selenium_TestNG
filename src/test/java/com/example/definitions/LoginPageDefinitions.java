@@ -28,7 +28,7 @@ public class LoginPageDefinitions {
     public  void setUp() {
 
         login  lg= new login();
-       lg.lanchbrowser();
+       //lg.lanchbrowser();
 
     }
 

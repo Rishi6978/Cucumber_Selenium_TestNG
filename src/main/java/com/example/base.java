@@ -15,21 +15,26 @@ public class base {
     public final static int TIMEOUT = 30;
 
 @Before
-    public WebDriver setUp() {
+    public void setUp() {
+
+    System.setProperty("webdriver.chrome.driver", "C:/Users/likit/OneDrive/Desktop/chromedriver.exe");
+
 
         ChromeOptions options = new ChromeOptions();
+
         options.addArguments("--start-maximized");
         //    options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
-return driver;
+
 
     }
 
 
     @AfterAll
-    public void closeAll()
-    {
-driver.quit();
+    public void closeAll(){
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
