@@ -6,16 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static com.example.base.driver;
 
-public class homepage {
+public class homepageAakanksha {
 
     @FindBy(xpath = "//*[text()='My Info']")
     private WebElement myInfo;
@@ -28,7 +26,7 @@ public class homepage {
 
 
 
-    public homepage() {
+    public homepageAakanksha() {
         PageFactory.initElements(driver, this);
     }
 

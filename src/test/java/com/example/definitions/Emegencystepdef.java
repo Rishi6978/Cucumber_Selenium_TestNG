@@ -1,20 +1,15 @@
 package com.example.definitions;
 
-import com.example.pom.EmergencyPageObj;
-import com.example.pom.login;
-import io.cucumber.java.Before;
+import com.example.pom.EmergencyPageObjAakanksha;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import static com.example.base.driver;
 
 
 public class Emegencystepdef {
-    EmergencyPageObj eoj= new EmergencyPageObj();
+    EmergencyPageObjAakanksha eoj= new EmergencyPageObjAakanksha();
         @And("user clicks on the Add button")
         public void userClicksOnTheAddButton() {
-            EmergencyPageObj eoj= new EmergencyPageObj();
+            EmergencyPageObjAakanksha eoj= new EmergencyPageObjAakanksha();
             eoj.addButton();
         }
         @And("user enters emergency contact details {string}, {string}, and {string}")

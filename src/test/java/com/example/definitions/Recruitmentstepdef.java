@@ -1,21 +1,17 @@
 package com.example.definitions;
 
-import com.example.pom.Recruitment;
+import com.example.pom.RecruitmentAakanksha;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import java.awt.*;
 import java.util.Map;
 
-import static com.example.base.driver;
-
 public class Recruitmentstepdef {
 
-    Recruitment recruitment= new Recruitment();
+    RecruitmentAakanksha recruitment= new RecruitmentAakanksha();
 
     @When("User navigates to the Recruitment page")
     public void userNavigatesToTheRecruitmentPage() throws InterruptedException {

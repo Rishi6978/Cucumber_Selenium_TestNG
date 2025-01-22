@@ -2,7 +2,6 @@ package com.example.pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +14,7 @@ import java.util.List;
 
 import static com.example.base.driver;
 
-public class EmergencyPageObj {
+public class EmergencyPageObjAakanksha {
 
 
     private WebDriverWait wait;
@@ -36,7 +35,7 @@ public class EmergencyPageObj {
     private WebElement save;
 
 
-    public EmergencyPageObj() {
+    public EmergencyPageObjAakanksha() {
         PageFactory.initElements(driver, this);
     }
 

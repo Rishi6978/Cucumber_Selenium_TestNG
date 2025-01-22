@@ -1,6 +1,6 @@
 package com.example.definitions;
 
-import com.example.pom.myinfo;
+import com.example.pom.myinfoAakanksha;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
@@ -24,7 +24,7 @@ public class myinfostepdef {
         String maritalStatus = details.get("MaritalStatus");
         String dateOfBirth = details.get("DateofBirth");
         String gender = details.get("Gender");
-        myinfo myInfoPage = new myinfo(driver);
+        myinfoAakanksha myInfoPage = new myinfoAakanksha(driver);
         myInfoPage.updatePersonalDetails(fullName, middleName, employeeId, otherId, licenseNumber);
         myInfoPage.selectNationality(nationality);
         myInfoPage.selectMaritalStatus(maritalStatus);
@@ -40,7 +40,7 @@ public class myinfostepdef {
     }
     @And("User uploads a file")
     public void userUploadsAFile() throws InterruptedException, AWTException {
-        myinfo myInfoPage = new myinfo(driver);
+        myinfoAakanksha myInfoPage = new myinfoAakanksha(driver);
 
         myInfoPage.uploadFile();
 
@@ -49,7 +49,7 @@ public class myinfostepdef {
 
     @Then("User save the record")
     public void userSaveTheRecord() throws InterruptedException {
-        myinfo myInfoPage = new myinfo(driver);
+        myinfoAakanksha myInfoPage = new myinfoAakanksha(driver);
         myInfoPage.save();
     }
 

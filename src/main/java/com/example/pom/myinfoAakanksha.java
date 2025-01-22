@@ -13,23 +13,17 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 
-public class myinfo {
-
+public class myinfoAakanksha {
     @FindBy(xpath = "//input[@name='firstName' and @placeholder='First Name']")
     public WebElement firstNameField;
-
     @FindBy(xpath = "//input[@name='middleName']")
     public WebElement middleNameField;
-
     @FindBy(xpath = "//label[text()='Employee Id']//following::input[1]")
     public WebElement employeeIdField;
-
     @FindBy(xpath = "//label[text()='Other Id']//following::input[1]")
     public WebElement otherIdField;
-
     @FindBy(xpath = "//label[text()='Other Id']//following::input[2]")
     public WebElement licenseNoField;
-
     @FindBy(xpath = "(//div[@class='oxd-select-text-input'])[1]")
     public WebElement userNameDropdownList;
     @FindBy(xpath = "//label[text()='Gender']")
@@ -49,7 +43,7 @@ public class myinfo {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public myinfo(WebDriver driver) {
+    public myinfoAakanksha(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);

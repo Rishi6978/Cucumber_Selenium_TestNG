@@ -1,19 +1,14 @@
 package com.example.definitions;
 
-import com.example.pom.homepage;
-import com.example.pom.login;
+import com.example.pom.homepageAakanksha;
+import com.example.pom.loginAakanksha;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-
-import java.time.Duration;
 
 import static com.example.base.driver;
 
@@ -27,7 +22,7 @@ public class LoginPageDefinitions {
     @Before
     public  void setUp() {
 
-        login  lg= new login();
+        loginAakanksha lg= new loginAakanksha();
        lg.lanchbrowser();
 
     }
@@ -42,7 +37,7 @@ public class LoginPageDefinitions {
     @When("User enters username as {string} and password as {string}")
     public void goToHomePage(String userName, String passWord) {
 
-      login  lg= new login();
+      loginAakanksha lg= new loginAakanksha();
       lg.logintoapp(userName, passWord);
 
         // go the next page
@@ -72,14 +67,14 @@ public class LoginPageDefinitions {
     @Then("user navigates to myinfo page")
     public void usernavigateMYinfo() {
 
-        homepage homepg = new homepage();
+        homepageAakanksha homepg = new homepageAakanksha();
        homepg.navigatetosidemenu();
 
     }
 
     @Then("user navigates to {string}")
     public void userNavigatesTo(String menu) {
-        homepage homepg = new homepage();
+        homepageAakanksha homepg = new homepageAakanksha();
         homepg.navigatetosidemenu(menu);
     }
 
@@ -94,8 +89,8 @@ public class LoginPageDefinitions {
 
     @Then("user verify My Action")
     public void userVerifyMyAction() {
-        homepage homepg = new homepage();
-        login  lg= new login();
+        homepageAakanksha homepg = new homepageAakanksha();
+        loginAakanksha lg= new loginAakanksha();
         homepg.myActions();
 lg.forgotpwd();
 

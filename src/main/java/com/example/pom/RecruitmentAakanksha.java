@@ -1,8 +1,6 @@
 package com.example.pom;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -18,11 +16,11 @@ import java.util.Set;
 
 import static com.example.base.driver;
 
-public class Recruitment {
+public class RecruitmentAakanksha {
    // private WebDriver driver;
     private WebDriverWait wait;
     String parentWindow = driver.getWindowHandle();
-    public Recruitment() {
+    public RecruitmentAakanksha() {
         PageFactory.initElements(driver, this);
     }
 
@@ -99,7 +97,7 @@ public class Recruitment {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 
         wait.until(ExpectedConditions.elementToBeClickable(firstName));
-        myinfo info =new myinfo(driver);
+        myinfoAakanksha info =new myinfoAakanksha(driver);
         info.clearAndEnterText(firstName,firstname);
         info.clearAndEnterText(lastName,lastname);
         info.clearAndEnterText(email,mailid);
