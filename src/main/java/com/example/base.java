@@ -12,14 +12,14 @@ public class base {
 
 
     public static WebDriver driver;
-    public final static int TIMEOUT = 30;
+    public final static int TIMEOUT = 60;
 
 @Before
     public WebDriver setUp() {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-        //    options.addArguments("--headless");
+            //options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
 return driver;
@@ -27,9 +27,9 @@ return driver;
     }
 
 
-   /* @AfterAll
+    @AfterAll
     public void closeAll()
     {
-driver.quit();
-    }*/
+//driver.quit();
+    }
 }

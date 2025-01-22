@@ -10,6 +10,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+import java.io.FileNotFoundException;
+
 import static com.example.base.driver;
 
 public class LoginPageDefinitions {
@@ -28,17 +30,18 @@ public class LoginPageDefinitions {
     }
 
     @Given("User is on HRMLogin page {string}")
-    public void loginTest(String url) {
+    public void loginTest(String url) throws FileNotFoundException {
+
 
         driver.get(url);
 
     }
 
-    @When("User enters username as {string} and password as {string}")
-    public void goToHomePage(String userName, String passWord) {
+    @When("User enters username as {string} from {string} in {string} with {string} and password as {string}")
+    public void goToHomePage(String FileName, String SheetName, String dataRowNum,String userName, String passWord) {
 
       loginAakanksha lg= new loginAakanksha();
-      lg.logintoapp(userName, passWord);
+      lg.logintoapp(FileName, SheetName,dataRowNum,userName, passWord);
 
         // go the next page
     }
@@ -79,6 +82,16 @@ public class LoginPageDefinitions {
     }
 
 
+
+
+    @Then("user navigates to help")
+    public void user_navugates_to_help(){
+        homepage homepg = new homepage();
+
+        homepg.helpicon();
+
+
+    }
 
     @After
     public void teardown() {
