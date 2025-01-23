@@ -1,7 +1,7 @@
 package com.example.definitions;
 
-import com.example.pom.homepageAakanksha;
-import com.example.pom.loginAakanksha;
+import com.example.pom.homepage;
+import com.example.pom.login;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -24,7 +24,7 @@ public class LoginPageDefinitions {
     @Before
     public  void setUp() {
 
-        loginAakanksha lg= new loginAakanksha();
+        login lg= new login();
        lg.lanchbrowser();
 
     }
@@ -40,7 +40,7 @@ public class LoginPageDefinitions {
     @When("User enters username as {string} from {string} in {string} with {string} and password as {string}")
     public void goToHomePage(String FileName, String SheetName, String dataRowNum,String userName, String passWord) {
 
-      loginAakanksha lg= new loginAakanksha();
+      login lg= new login();
       lg.logintoapp(FileName, SheetName,dataRowNum,userName, passWord);
 
         // go the next page
@@ -70,14 +70,14 @@ public class LoginPageDefinitions {
     @Then("user navigates to myinfo page")
     public void usernavigateMYinfo() {
 
-        homepageAakanksha homepg = new homepageAakanksha();
+        homepage homepg = new homepage();
        homepg.navigatetosidemenu();
 
     }
 
     @Then("user navigates to {string}")
     public void userNavigatesTo(String menu) {
-        homepageAakanksha homepg = new homepageAakanksha();
+        homepage homepg = new homepage();
         homepg.navigatetosidemenu(menu);
     }
 
@@ -102,8 +102,8 @@ public class LoginPageDefinitions {
 
     @Then("user verify My Action")
     public void userVerifyMyAction() {
-        homepageAakanksha homepg = new homepageAakanksha();
-        loginAakanksha lg= new loginAakanksha();
+        homepage homepg = new homepage();
+        login lg= new login();
         homepg.myActions();
 lg.forgotpwd();
 

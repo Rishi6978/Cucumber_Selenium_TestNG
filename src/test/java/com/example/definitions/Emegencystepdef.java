@@ -1,15 +1,15 @@
 package com.example.definitions;
 
-import com.example.pom.EmergencyPageObjAakanksha;
+import com.example.pom.EmergencyPageObj;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 
 
 public class Emegencystepdef {
-    EmergencyPageObjAakanksha eoj= new EmergencyPageObjAakanksha();
+    EmergencyPageObj eoj= new EmergencyPageObj();
         @And("user clicks on the Add button")
         public void userClicksOnTheAddButton() {
-            EmergencyPageObjAakanksha eoj= new EmergencyPageObjAakanksha();
+            EmergencyPageObj eoj= new EmergencyPageObj();
             eoj.addButton();
         }
         @And("user enters emergency contact details {string}, {string}, and {string}")

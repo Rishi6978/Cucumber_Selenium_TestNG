@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-public class HelpObjAakanksha {
+public class HelpObj {
 
 
     private WebDriver driver;
@@ -24,7 +24,7 @@ public class HelpObjAakanksha {
     @FindBy(xpath = "//h6[text()='PIM']")
     public WebElement dashboard;
 
-    public HelpObjAakanksha(WebDriver driver) {
+    public HelpObj(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);

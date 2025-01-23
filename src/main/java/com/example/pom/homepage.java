@@ -1,6 +1,6 @@
 package com.example.pom;
 
-import com.example.utils.utils;
+import com.example.Utils.utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +14,7 @@ import java.util.List;
 
 import static com.example.base.driver;
 
-public class homepageAakanksha {
+public class homepage {
 
     @FindBy(xpath = "//*[text()='My Info']")
     private WebElement myInfo;
@@ -33,7 +33,7 @@ public class homepageAakanksha {
 
 
 
-    public homepageAakanksha() {
+    public homepage() {
         PageFactory.initElements(driver, this);
     }
 

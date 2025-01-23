@@ -10,7 +10,7 @@ Feature: Login to HRM Application
   @ValidCredentials @smoke
   Scenario: Login with valid credentials and navigate to myinfo page and verify records
 
-    When User enters username as "Admin" and password as "admin123"
+    When User enters username as {string} from {string} in {string} with {string} and password as {string}
     Then User should be able to login successfully and new page open
     Then user navigates to myinfo page
     Then user navigates to "Dashboard"

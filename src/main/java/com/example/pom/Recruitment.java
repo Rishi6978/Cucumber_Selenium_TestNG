@@ -16,11 +16,11 @@ import java.util.Set;
 
 import static com.example.base.driver;
 
-public class RecruitmentAakanksha {
+public class Recruitment {
    // private WebDriver driver;
     private WebDriverWait wait;
     String parentWindow = driver.getWindowHandle();
-    public RecruitmentAakanksha() {
+    public Recruitment() {
         PageFactory.initElements(driver, this);
     }
 
@@ -97,7 +97,7 @@ public class RecruitmentAakanksha {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 
         wait.until(ExpectedConditions.elementToBeClickable(firstName));
-        myinfoAakanksha info =new myinfoAakanksha(driver);
+        myinfo info =new myinfo(driver);
         info.clearAndEnterText(firstName,firstname);
         info.clearAndEnterText(lastName,lastname);
         info.clearAndEnterText(email,mailid);

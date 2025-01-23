@@ -14,7 +14,7 @@ import java.util.List;
 
 import static com.example.base.driver;
 
-public class EmergencyPageObjAakanksha {
+public class EmergencyPageObj {
 
 
     private WebDriverWait wait;
@@ -35,7 +35,7 @@ public class EmergencyPageObjAakanksha {
     private WebElement save;
 
 
-    public EmergencyPageObjAakanksha() {
+    public EmergencyPageObj() {
         PageFactory.initElements(driver, this);
     }
 

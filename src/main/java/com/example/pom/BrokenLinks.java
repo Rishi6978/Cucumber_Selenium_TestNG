@@ -13,14 +13,14 @@ import java.util.List;
 
 import static com.example.base.driver;
 
-public class BrokenLinksAakanksha{
+public class BrokenLinks {
     private WebDriverWait wait;
 
     @FindBy(xpath = "//*[text()='Dashboard']/parent::span")
     public WebElement dashboardTitle;
     @FindBy(xpath = "//*[text()='Dashboard']/parent::a")
     public WebElement DashboardSection;
-    public BrokenLinksAakanksha() {
+    public BrokenLinks() {
         PageFactory.initElements(driver, this);
     }
     public void verfiyTheDashboard(){

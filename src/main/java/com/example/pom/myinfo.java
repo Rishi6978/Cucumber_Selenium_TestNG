@@ -13,7 +13,7 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 
-public class myinfoAakanksha {
+public class myinfo {
     @FindBy(xpath = "//input[@name='firstName' and @placeholder='First Name']")
     public WebElement firstNameField;
     @FindBy(xpath = "//input[@name='middleName']")
@@ -43,7 +43,7 @@ public class myinfoAakanksha {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public myinfoAakanksha(WebDriver driver) {
+    public myinfo(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);

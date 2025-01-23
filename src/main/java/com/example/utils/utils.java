@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.Utils;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;

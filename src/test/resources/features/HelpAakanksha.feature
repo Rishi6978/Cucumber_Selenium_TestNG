@@ -7,8 +7,6 @@ Feature: Validate Help Feature in OrangeHRM
 
   Given User enters username as "testdata" from "login" in "1" with "Admiyrtyn" and password as "admin123"
 
-
-
     When user navigates to myinfo page
     And user clicks on the Help icon
     Then help page opens in a new tab displaying the relevant content

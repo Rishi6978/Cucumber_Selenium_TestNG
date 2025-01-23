@@ -1,6 +1,6 @@
 package com.example.definitions;
 
-import com.example.pom.RecruitmentAakanksha;
+import com.example.pom.Recruitment;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Recruitmentstepdef {
 
-    RecruitmentAakanksha recruitment= new RecruitmentAakanksha();
+    Recruitment recruitment= new Recruitment();
 
     @When("User navigates to the Recruitment page")
     public void userNavigatesToTheRecruitmentPage() throws InterruptedException {
