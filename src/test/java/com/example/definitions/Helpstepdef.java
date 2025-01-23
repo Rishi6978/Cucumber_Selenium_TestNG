@@ -1,13 +1,14 @@
 package com.example.definitions;
 
-import com.example.pom.EmergencyPageObj;
 import com.example.pom.HelpObj;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static com.example.base.driver;
+
 public class Helpstepdef {
-    HelpObj Hoj= new HelpObj();
+    HelpObj Hoj= new HelpObj(driver);
     @And("user clicks on the Help icon")
     public void userClicksOnTheIcon() {
 Hoj.clickHelpIcon();

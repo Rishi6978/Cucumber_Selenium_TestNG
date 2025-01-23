@@ -1,12 +1,8 @@
 package com.example.definitions;
 
 import com.example.pom.EmergencyPageObj;
-import com.example.pom.login;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebDriver;
-import static com.example.base.driver;
 
 
 public class Emegencystepdef {
@@ -45,5 +41,7 @@ public class Emegencystepdef {
     public void userShouldSeeTheUpdatedNameAs(String arg0) {
 System.out.println("hello");
     }
+
+
 }
 

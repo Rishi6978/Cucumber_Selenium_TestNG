@@ -1,6 +1,6 @@
 package com.example.pom;
 
-import com.example.utils.utils;
+import com.example.Utils.utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,7 +1,5 @@
 package com.example.definitions;
 
-
-
 import com.example.pom.homepage;
 import com.example.pom.login;
 import io.cucumber.java.After;
@@ -16,7 +14,6 @@ import java.io.FileNotFoundException;
 
 import static com.example.base.driver;
 
-
 public class LoginPageDefinitions {
 
   //  private static WebDriver driver;
@@ -27,7 +24,7 @@ public class LoginPageDefinitions {
     @Before
     public  void setUp() {
 
-        login  lg= new login();
+        login lg= new login();
        lg.lanchbrowser();
 
     }
@@ -36,8 +33,6 @@ public class LoginPageDefinitions {
     public void loginTest(String url) throws FileNotFoundException {
 
 
-
-       // System.out.println(properties.getProperty("url")+"urlfghj ");
         driver.get(url);
 
     }
@@ -45,7 +40,7 @@ public class LoginPageDefinitions {
     @When("User enters username as {string} from {string} in {string} with {string} and password as {string}")
     public void goToHomePage(String FileName, String SheetName, String dataRowNum,String userName, String passWord) {
 
-      login  lg= new login();
+      login lg= new login();
       lg.logintoapp(FileName, SheetName,dataRowNum,userName, passWord);
 
         // go the next page
@@ -101,22 +96,17 @@ public class LoginPageDefinitions {
     @After
     public void teardown() {
 
-    //    driver.quit();
+        driver.quit();
     }
 
 
     @Then("user verify My Action")
     public void userVerifyMyAction() {
         homepage homepg = new homepage();
-        login  lg= new login();
+        login lg= new login();
         homepg.myActions();
+lg.forgotpwd();
 
-//homepg.verifyhelp();
-
-
-
-
-//lg.forgotpwd();
 
     }
 }

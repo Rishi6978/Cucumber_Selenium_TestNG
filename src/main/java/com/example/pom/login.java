@@ -1,22 +1,19 @@
 package com.example.pom;
 
+import com.example.Utils.ReadAndWriteExcel;
 import com.example.base;
-import com.example.utils.ReadAndWriteExcel;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
-import java.security.PrivateKey;
 import java.util.Map;
-import java.util.Properties;
+
 //import static com.example.base.driver;
 
 public class login extends base {
-    public static Map<String, String> data  = null;
-    //  public login loginpg;
+ //  public login loginpg;
+ public static Map<String, String> data  = null;
 
     @FindBy(xpath = "//*[@class='oxd-form']/div[3]/button")
     private WebElement btn_Login;
@@ -52,7 +49,8 @@ public  void username(String UN)
 
     } catch (Exception e) {
         throw new RuntimeException(e);
-
+        //Assert.fail();
+       // SS();
     }
 }
 
@@ -61,6 +59,8 @@ public  void username(String UN)
     {
         link_forgotpassword.click();
     }
+
+
 
 
 
@@ -75,9 +75,9 @@ public  void username(String UN)
 
         link_forgotpassword.isDisplayed();
 
-       username(data.get("EmailId")+"2324");
+        username(data.get("EmailId")+"2324");
 
-       //driver.findElement(By.xpath("//*[text()='Zee']")).clck
+        //driver.findElement(By.xpath("//*[text()='Zee']")).clck
 
 
 

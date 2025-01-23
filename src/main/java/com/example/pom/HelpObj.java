@@ -1,6 +1,7 @@
 package com.example.pom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,11 +13,10 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-import static com.example.base.driver;
-
 public class HelpObj {
 
 
+    private WebDriver driver;
     private WebDriverWait wait;
 
     @FindBy(xpath = "//button[@title='Help']")
@@ -24,7 +24,9 @@ public class HelpObj {
     @FindBy(xpath = "//h6[text()='PIM']")
     public WebElement dashboard;
 
-    public HelpObj() {
+    public HelpObj(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
     String parentWindow = driver.getWindowHandle();
@@ -33,12 +35,15 @@ public class HelpObj {
     {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.elementToBeClickable(helpIcon)).click();
+
     }
     public void windlowHandles()
     {
+
         Set<String> allWindows = driver.getWindowHandles();
         for (String windowHandle : allWindows) {
             if (!windowHandle.equals(parentWindow)) {
+                System.out.println("Window Handle: " + windowHandle);
                 driver.switchTo().window(windowHandle);
                 break;
             }
