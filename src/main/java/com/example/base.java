@@ -24,8 +24,16 @@ public class base {
     }
 
 
+<<<<<<< HEAD
     @AfterAll
     public void closeAll() {
         driver.quit();
     }
+=======
+   /* @AfterAll
+    public void closeAll()
+    {
+driver.quit();
+    }*/
+>>>>>>> main
 }

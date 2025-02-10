@@ -31,8 +31,13 @@ public class homepage {
 
         System.out.println(driver.getCurrentUrl());
 
+<<<<<<< HEAD
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='PIM']")));
+=======
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='My Info']")));
+>>>>>>> main
 
     }
 
@@ -46,8 +51,16 @@ public class homepage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='PIM']")));
     }
 
+<<<<<<< HEAD
     public void myActions() {
         myActions.get(0).click();
+=======
+
+   public void myActions(){
+
+//myActions.get(1).click();
+
+>>>>>>> main
     }
 
 
