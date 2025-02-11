@@ -56,13 +56,18 @@
           <version>7.10.1</version>
           <scope>compile</scope>
       </dependency>
-      <!--      <dependency>-->
-<!--          <groupId>org.testng</groupId>-->
-<!--          <artifactId>testng</artifactId>-->
-<!--          <version>7.10.1</version>-->
-<!--          <scope>compile</scope>-->
-<!--      </dependency>-->
+    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.0.8</version>
+    </dependency>
 
+    <dependency>
+      <groupId>tech.grasshopper</groupId>
+      <artifactId>extentreports-cucumber7-adapter</artifactId>
+      <version>1.14.0</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -71,8 +76,9 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${maven.compiler.plugin.version}</version>
         <configuration>
-          <source>${maven.compiler.source.version}</source>
-          <target>${maven.compiler.target.version}</target>
+          <source>21</source>
+          <target>21</target>
+            <compilerArgs>--enable-preview</compilerArgs>
         </configuration>
       </plugin>
       <plugin>
