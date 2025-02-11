@@ -93,4 +93,6 @@ public class EmergencyPageObj {
         } else {
             System.out.println("Error: No contacts found or index out of bounds");
         }
+
+        System.out.println("new message");
     }}
